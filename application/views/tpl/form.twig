@@ -1,0 +1,45 @@
+{% macro input_text(data) %}
+    <input type="text" name="{{ data.attr.name }}" id="{{ data.attr.name }}" class="{{ data.attr.class }}" placeholder="{{ data.attr.placeholder|e }}" value="{{ data.attr.value|e }}" data-validate="{{ data.attr.data.validate|e }}" data-type="{{ data.attr.data.type|e }}" data-text="{{ data.attr.data.text|e }}" data-add="{{ data.attr.data.add|e }}" data-mod="{{ data.attr.data.mod|e }}" style="{{ data.attr.style|e }}" size="{{ data.attr.size|default(100) }}"/>
+{% endmacro %}
+
+{% macro input_hidden(name, value) %}
+    <input type="hidden" id ="{{ name }}" name="{{ name }}" value="{{ value }}"/>
+{% endmacro %}
+
+{% macro input_password(data) %}
+    {{ aja.placeholder }}
+    <input type="password" name="{{ data.attr.name }}" id="{{ data.attr.name }}" class="{{ data.attr.class }}" placeholder="{{ data.attr.placeholder|e }}" value="{{ data.attr.value|e }}" data-validate="{{ data.attr.data_validate|e }}" data-type="{{ data.attr.data_type|e }}" data-text="{{ data.attr.data_text|e }}" data-add="{{ data.attr.data_add|e }}" data-mod="{{ data.attr.data_mod|e }}" style="{{ data.attr.style|e }}" size="{{ data.attr.size|default(100) }}"/>
+{% endmacro %}
+
+{% macro token(token, name) %}
+    <input type="hidden" name="{{ name|default('csrf_test_name') }}" value="{{ token }}"/>
+{% endmacro %}
+
+{% macro textarea(name, value, class) %}
+    <textarea name="{{ name }}" id="{{ name }}" class="{{ class }}">{{ value|e }}</textarea>
+{% endmacro %}
+
+{% macro label(data) %}
+    <label for="{{ data.id|e }}" class="{{ data.class|e }}">{{ data.content|e }}</label>
+{% endmacro %}
+
+{% macro button(data, content) %}
+    <button type="{{ data.attr.type|default('button') }}" id="{{ data.attr.id|default('guardar') }}"  class="{{ data.attr.class|e }}" data-action="{{ data.attr.accion|default('guardar') }}" data-accion="{{ data.attr.accion|default('guardar') }}" style="{{ data.attr.style|e }}">
+        {{ content|default('Guardar') }}
+    </button>
+{% endmacro %}
+
+{% macro select(name, element, style) %}
+    <select name="{{ name }}" id="{{ name }}" class="form-control select2">
+        <option value="0">Seleccione</option>
+        {% for element in element %}
+            <option value="{{ element }}">{{ element }}</option>
+        {% endfor %}
+
+    </select>
+{% endmacro %}
+
+
+{% macro form_open(id, class, action, method ,style) %}
+<form role="form" id="{{ id|e }}" class="{{ class|e }}" action="{{ action|e }}" method="{{ method|e }}" style="{{ style|e }}" >
+{% endmacro %}

@@ -1,0 +1,28 @@
+{
+  "name": "garajemotores",
+  "version": "1.0.0",
+  "description": "What is CodeIgniter ###################",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "clean-css": "^4.0.5",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.0.0",
+    "gulp-uglify": "^2.0.1",
+    "install": "^0.8.7",
+    "npm": "^4.2.0",
+    "sudo": "^1.0.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,26 @@
+{
+    "1" :
+    {
+        "data" :
+        {
+            "id" : 1,
+            "si_user" : "informatica",
+            "si_password": "987654",
+            "first_name" : "Informatica",
+            "last_name" : "Informatica",
+            "correo" : "jesus@gmail.com"
+        }
+    },
+    "2" :
+    {
+        "data" :
+        {
+            "id" : 2,
+            "si_user" : "administrador",
+            "si_password": "159753654",
+            "first_name" : "Administrador",
+            "last_name" : "Administrador",
+            "correo" : "josue@gmail.com"
+        }
+    }
+}

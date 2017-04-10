@@ -1,0 +1,343 @@
+{% extends "tpl/tpl_home_page.twig" %}
+{% import "tpl/form.twig" as forms %}
+{% block head %}
+    {{ parent() }}
+    {% block stylesheets %}
+        <style type="text/css" media="screen">
+            a {
+                cursor: pointer;
+            }
+
+            .ms-container {
+                width: 100% !important;
+            }
+            .table > thead > tr > th {
+                font-size: 1.0em;
+                font-weight: bold;
+            }
+            .table > tbody > tr > td {
+                font-size: 1.0em;
+            }
+        </style>
+    {% endblock %}
+{% endblock %}
+{% block content %}
+
+    <div class="wrapper">
+        <div class="sidebar" data-active-color="rose" data-background-color="black"
+             data-image="{{ assets_url()~ 'img/sidebar-1.jpg' }}">
+            <div class="logo">
+                <a href="" class="simple-text">
+                    Prototipo
+                </a>
+            </div>
+            <div class="logo logo-mini">
+                <a href="" class="simple-text">
+                    Prototipo
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <div class="user">
+                    <div class="photo">
+                        <img src="{{ assets_url()~ 'img/default-avatar.png' }}"/>
+                    </div>
+                    <div class="info">
+                        <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+                            Jesus Laya
+                            <b class="caret"></b>
+                        </a>
+                        <div class="collapse" id="collapseExample">
+                            <ul class="nav">
+                                <li>
+                                    <a href="#">Mi Perfil</a>
+                                </li>
+                                <li>
+                                    <a href="#">Editar Perfil</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ajustes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav">
+                    <li class="active">
+                        <a href="">
+                            <i class="material-icons">Consultor</i>
+                            <p>Consultor</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#">
+                            <p>Agence</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#">
+                            <p>Projetos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#">
+                            <p>Projetos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#">
+                            <p>Administrativo</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#">
+                            <p>Comercial</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#">
+                            <p>Financeiro</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#">
+                            <p>Usuário</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#">
+                            <p>Sair</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <nav class="navbar navbar-transparent navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-minimize">
+                        <button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon">
+                            <i class="material-icons visible-on-sidebar-regular">more_vert</i>
+                            <i class="material-icons visible-on-sidebar-mini">view_list</i>
+                        </button>
+                    </div>
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="{{ base_url() }}"> Consultor </a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">dashboard</i>
+                                    <p class="hidden-lg hidden-md">Dashboard</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">notifications</i>
+                                    <span class="notification">5</span>
+                                    <p class="hidden-lg hidden-md">
+                                        Notifications
+                                        <b class="caret"></b>
+                                    </p>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">Mike John responded to your email</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">You have 5 new tasks</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">You're now friend with Andrew</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Another Notification</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Another One</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">person</i>
+                                    <p class="hidden-lg hidden-md">Profile</p>
+                                </a>
+                            </li>
+                            <li class="separator hidden-lg hidden-md"></li>
+                        </ul>
+                        <form class="navbar-form navbar-right" role="search">
+                            <div class="form-group form-search is-empty">
+                                <input type="text" class="form-control" placeholder="Buscar">
+                                <span class="material-input"></span>
+                            </div>
+                            <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                <i class="material-icons">search</i>
+                                <div class="ripple-container"></div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="alert alert-info">
+                                    <h4 class="card-title">Período</h4>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <select name="mes_desde" id="mes_desde"
+                                                class="form-control select2 select2-button-addons-single-input-group-sm">
+                                            {% for key, mes in list_mes %}
+                                                <option value="{{ key }}">{{ mes }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select name="anyo_desde" id="anyo_desde"
+                                                class="form-control select2 select2-button-addons-single-input-group-sm">
+                                            {% for a in range(2003,2007) %}
+                                                <option value="{{ a }}">{{ a }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select name="mes_hasta" id="mes_hasta"
+                                                class="form-control select2 select2-button-addons-single-input-group-sm">
+                                            {% for key, mes in list_mes %}
+                                                <option value="{{ key }}">{{ mes }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select name="anyo_hasta" id="anyo_hasta"
+                                                class="form-control select2 select2-button-addons-single-input-group-sm">
+                                            {% for a in range(2003,2007) %}
+                                                <option value="{{ a }}">{{ a }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <select style="width: 100%;" class="form-control multi-select select2 select2-button-addons-single-input-group-sm" multiple="multiple" name="items_user" id="items_user">
+                                            {% for u in list_user %}
+                                                <option title="Click para el consultor {{ u.co_usuario }}"
+                                                        value="{{ u.co_usuario }}">{{ u.no_usuario }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card card-chart">
+                                <div class="card-header" data-background-color="rose" data-header-animation="true">
+                                    <div class="ct-chart" id="websiteViewsChart"></div>
+                                </div>
+                                <div class="card-content">
+                                    <h4 class="card-title">
+                                        <a style="width: 100%;" class="relatorio btn btn-info btn-large"
+                                           title="Relatório">Relatório</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-chart">
+                                <div class="card-header" data-background-color="green" data-header-animation="true">
+                                    <div class="ct-chart" id="dailySalesChart"></div>
+                                </div>
+                                <div class="card-content">
+                                    <h4 class="card-title">
+                                        <a style="width: 100%;" class="grafico btn btn-info" title="Gráfico">Gráfico</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-chart">
+                                <div class="card-header" data-background-color="blue" data-header-animation="true">
+                                    <div class="ct-chart" id="completedTasksChart"></div>
+                                </div>
+                                <div class="card-content">
+                                    <h4 class="card-title">
+                                        <a style="width: 100%;" class="pizza btn btn-info" title="pizza">Pizza</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card container-relatorio" style="display: none;">
+                    <div data-background-color="orange" class="card-header card-header-text">
+                        <h4 class="card-title">Relatório</h4>
+                    </div>
+                        <div class="card-content table-responsive" id="div_relatorio"></div>
+                </div>
+                <div class="card container-grafico" style="display: none;">
+                    <div id="container-result"></div>
+                </div>
+                <div class="card container-pizza" style="display: none;">
+                    <div id="container-result-pizza"></div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Company
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        Agence
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascript %}
+    <script src="{{ assets_url()~ 'js/agence.js' }}"></script>
+    <script type="text/javascript">
+    </script>
+{% endblock %}
